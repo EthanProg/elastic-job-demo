@@ -6,9 +6,9 @@ import org.slf4j.LoggerFactory;
 import com.dangdang.ddframe.job.api.ShardingContext;
 import com.dangdang.ddframe.job.api.simple.SimpleJob;
 
-public class MyElasticJob implements SimpleJob {
+public class MyElasticJob3 implements SimpleJob {
 
-	private static Logger log = LoggerFactory.getLogger(MyElasticJob.class);
+	private static Logger log = LoggerFactory.getLogger(MyElasticJob3.class);
 
 	@Override
 	public void execute(ShardingContext context) {
@@ -20,14 +20,8 @@ public class MyElasticJob implements SimpleJob {
 			log.info("shardingTotalCount={}", context.getShardingTotalCount());
 			log.info("taskId={}", context.getTaskId());
 			log.info("------------------------------------------------");
-			try {
-				Thread.sleep(10000L);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 			break;
-		/*case 1:
+		case 1:
 			log.info("jobName={}", context.getJobName());
 			log.info("jobParameter={}", context.getJobParameter());
 			log.info("shardingItem={}", context.getShardingItem());
@@ -42,7 +36,23 @@ public class MyElasticJob implements SimpleJob {
 			log.info("shardingTotalCount={}", context.getShardingTotalCount());
 			log.info("taskId={}", context.getTaskId());
 			log.info("------------------------------------------------");
-			break;*/
+			break;
+		case 3:
+			log.info("jobName={}", context.getJobName());
+			log.info("jobParameter={}", context.getJobParameter());
+			log.info("shardingItem={}", context.getShardingItem());
+			log.info("shardingTotalCount={}", context.getShardingTotalCount());
+			log.info("taskId={}", context.getTaskId());
+			log.info("------------------------------------------------");
+			break;
+		case 4:
+			log.info("jobName={}", context.getJobName());
+			log.info("jobParameter={}", context.getJobParameter());
+			log.info("shardingItem={}", context.getShardingItem());
+			log.info("shardingTotalCount={}", context.getShardingTotalCount());
+			log.info("taskId={}", context.getTaskId());
+			log.info("------------------------------------------------");
+			break;
 		default:
 			log.info("jobName={}", context.getJobName());
 			log.info("jobParameter={}", context.getJobParameter());
